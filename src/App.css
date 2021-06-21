@@ -1,0 +1,12 @@
+.div1 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.marg{
+  margin: 20px 50% 10px 50%
+}
+.marg1{
+  margin: 0% 50% 0% 50%
+}
