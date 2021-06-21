@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './App.css'
 import wavefile from './upload/wavefile.wav';
 import $ from 'jquery';
 
@@ -16,7 +17,7 @@ export default function App() {
 		dataArray.append('uploadFile', uploadFile);
 
 		axios
-			.post({wavefile}, dataArray, {
+			.post({ wavefile }, dataArray, {
 				headers: {
 					'Content-Type': 'multipart/form-data'
 				}
@@ -66,35 +67,28 @@ export default function App() {
 	});
 
 	return (
-		<div className="App">
+		<div className="marg">
 			<form onSubmit={submitForm}>
 				<input
 					type="text"
 					onChange={e => setFileBrowse(e.target.value)}
 					placeholder={'File browse'}
 				/>
-				<br/>
-				<br/>
-				<input type="file" onChange={e => setUploadFile(e.target.files)} />
-				<br/>
-				<br/>
-				<input type="submit" value="Upload" />
-				<br/>
+				<input type="file" onChange={e => setUploadFile(e.target.files)}/>
+				<input type="submit" value="Upload"/>
 			</form>
 			<hr/>
-			<pre>{uploadResponse}</pre>
+			<pre className="marg1">{uploadResponse}</pre>
 			<hr/>
 			<div class="full-sound">
 				<audio name="sound" controls controlsList="nodownload">
 					<source src="./upload/wavefile.wav" type="audio/wav" />
 				</audio>
 			</div>
-			<input type="button" name="start_time" value="Start time" /> →
+			<input type="button" name="start_time" value="Start time"/> →
 			<label name="select_start_time" />
-			<br />
-			<input type="button" name="end_time" value="End time" /> →
+			<input type="button" name="end_time" value="End time"/> →
 			<label name="select_end_time" />
-			<br/>
 			<hr/>
 			<div>
 				<input
@@ -116,6 +110,8 @@ export default function App() {
 		</div>
 	);
 }
+
+		
 
 
 
